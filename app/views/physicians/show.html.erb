@@ -1,0 +1,11 @@
+<h1>@physician.name </h1>
+<% p 'test' %>
+
+<% @physicians.appointment.each do |f| %>
+    <%= link_to f.name, f %>
+    <% end %>
+    
+<br />
+<%= link_to 'Delete Doctor', @physician, method: :delete, class: 'ui red button' %>
+    
+

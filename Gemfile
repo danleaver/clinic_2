@@ -39,6 +39,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'devise'
+  gem 'semantic-ui-sass'
+  gem 'faker'
 end
 
 group :test do
