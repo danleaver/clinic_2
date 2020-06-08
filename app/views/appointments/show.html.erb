@@ -1,2 +1,15 @@
-<h1>Appointments#show</h1>
-<p>Find me in app/views/appointments/show.html.erb</p>
+<h1>Appointment for  
+<%= (@patients.find(@appointment.patient_id)).name %>
+</h1>
+
+
+
+with <%= (@physicians.find(@appointment.physician_id)).name %>
+
+
+<br>
+<br>
+[put details here]
+
+<br>
+Edit and Delete Actions needed here
