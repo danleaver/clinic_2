@@ -8,7 +8,7 @@ class PatientsController < ApplicationController
   end
   def new
     @patient = Patient.new
-    render partial: "form"
+    :@physician
   end
   def create
     @patient = Patient.new(patient_params)

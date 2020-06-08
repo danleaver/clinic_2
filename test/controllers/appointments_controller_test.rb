@@ -6,8 +6,18 @@ class AppointmentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new--skip-routes" do
-    get appointments_new--skip-routes_url
+  test "should get new" do
+    get appointments_new_url
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get appointments_edit_url
+    assert_response :success
+  end
+
+  test "should get show" do
+    get appointments_show_url
     assert_response :success
   end
 

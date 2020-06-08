@@ -1,7 +1,9 @@
-<h1>Physicians#index</h1>
+<h1>Physicians</h1>
 <p>Select A Doctor</p>
-<%# p 'testing' %>
+
 <% @physicians.each do |doctor| %>
-    <%= p 'Dr. '%>
-<%= link_to doctor.name, doctor %>
+    <ul>
+    <%= link_to doctor.name, doctor %>
+    
+    </ul>
 <% end %>

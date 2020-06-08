@@ -5,19 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-roles = ['physician', 'patient', 'appointment']
+
 10.times do
-  physician = Physician.create(
-    name: Faker::Science.scientist
+  @physician = Physician.create(
+    name: "Dr. #{Faker::Name.name}"
   )
 
-  5.times do
-    patient = Patient.create(
-      name: Faker::TvShows::RickAndMorty.character,
+  2.times do
+    @patient = Patient.create(
+      name: Faker::Name.name
       
     )
 
-  
+    
+    Appointment.create(
+      appointment_date: Faker::Date.forward(days: 23),
+      patient_id: @patient.id,
+      physician_id: @physician.id
+    )
+    
+    
   end
-end
-puts 'data seeded'
+    
+    
+    
+  end
+      # appointments = Appointment.create(
+      #   appointment_date = 12/27/1987,
+      #   physician_id = @physician.id,
+      #   patient_id = @patient.id
+      # )

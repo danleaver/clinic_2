@@ -3,8 +3,10 @@ class PhysiciansController < ApplicationController
     :show, :edit, :update, :destroy]
   def index
     @physicians = Physician.all
+    
   end
   def show
+    @patients = Patient.all
   end
   def new
     @physician = Physician.new

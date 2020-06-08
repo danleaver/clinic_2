@@ -1,11 +1,20 @@
-<h1>@physician.name </h1>
-<% p 'test' %>
+<h1><%= @physician.name %> </h1>
 
-<% @physicians.appointment.each do |f| %>
-    <%= link_to f.name, f %>
-    <% end %>
+
+<% @physician.appointments.each do |f| %>
+    <%= link_to f.appointment_date, patient_path(f.patient_id) %>
+        <% @patients.each do |patient| %>
+                <% if patient.id === f.patient_id %>
+                <%= patient.name %>
+                <% end %>
+        <% end %>
+    <%= link_to 'Delete Appointment', [@physician, f], method: :delete %>
+        <br>
+<% end %>
     
 <br />
+<%= link_to 'New Appointment', new_physician_appointment_path(@physician), class: 'ui brown button' %>
 <%= link_to 'Delete Doctor', @physician, method: :delete, class: 'ui red button' %>
-    
+    <br>
+    <%= link_to 'Back to All Doctors',  physicians_path %>
 
